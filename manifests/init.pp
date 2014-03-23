@@ -13,7 +13,7 @@
 #  include motd
 #  puppet apply -e "class {'motd':}"
 class motd {
-  $ascii= generate('/bin/sh', '-c', "/usr/bin/figlet -c -w 60 ${hostname}")
+  $ascii= generate('/bin/sh', '-c', "/usr/bin/figlet -c ${hostname}")
   
   file {'/etc/motd':
     ensure	=> file,
